@@ -1,0 +1,31 @@
+version: '3'
+services:
+        python:
+                build:
+                        context: .
+                        dockerfile: Dockerfile
+                container_name: python-api
+                environment:
+                        - DB_NAME=WebApp
+                        - MYSQL_SERVER=mysql-db
+                depends_on:
+                        - db
+                ports:
+                        - 9080:9000
+                volumes:
+                        - ".:/app"
+                networks:
+                        - webservice
+        db:
+                image: 'mariadb:latest'
+                container_name: mysql-db
+                environment:
+                        - MYSQL_ROOT_PASSWORD=password
+                volumes:
+                        - "mysql-vol:/var/lib/mysql"
+                networks:
+                        - webservice
+networks:
+        webservice:
+volumes:
+        mysql-vol:
