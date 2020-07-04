@@ -6,6 +6,7 @@ services:
                         dockerfile: Dockerfile
                 container_name: python-api
                 environment:
+                        - TZ=Asia/Bangkok
                         - DB_NAME=WebApp
                         - MYSQL_SERVER=mysql-db
                 depends_on:
@@ -20,6 +21,7 @@ services:
                 image: 'mariadb:latest'
                 container_name: mysql-db
                 environment:
+                        - TZ=Asia/Bankok
                         - MYSQL_ROOT_PASSWORD=password
                 volumes:
                         - "mysql-vol:/var/lib/mysql"
