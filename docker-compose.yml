@@ -11,8 +11,8 @@ services:
                         - TZ=Asia/Bangkok
                         - DB_NAME=WebApp
                         - MYSQL_SERVER=mysql-db
-                depends_on:
-                        - db
+#                depends_on:
+#                        - db
                 ports:
                         - 9080:9000
                 volumes:
