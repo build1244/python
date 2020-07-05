@@ -5,7 +5,7 @@ services:
                         context: .
                         dockerfile: Dockerfile
                 image: webapp
-#                command: ["sh"]
+                command: ["sh"]
                 container_name: python-api
                 environment:
                         - TZ=Asia/Bangkok
@@ -19,16 +19,16 @@ services:
                         - ".:/app"
                 networks:
                         - webservice
-        db:
-                image: 'mariadb:latest'
-                container_name: mysql-db
-                environment:
-                        - TZ=Asia/Bankok
-                        - MYSQL_ROOT_PASSWORD=password
-                volumes:
-                        - "mysql-vol:/var/lib/mysql"
-                networks:
-                        - webservice
+#        db:
+#                image: 'mariadb:latest'
+#                container_name: mysql-db
+#                environment:
+#                        - TZ=Asia/Bankok
+#                        - MYSQL_ROOT_PASSWORD=password
+#                volumes:
+#                        - "mysql-vol:/var/lib/mysql"
+#                networks:
+#                        - webservice
 networks:
         webservice:
 volumes:
