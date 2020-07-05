@@ -15,7 +15,7 @@ services:
                 ports:
                         - 9080:9000
                 volumes:
-                        - "$(pwd):/app"
+                        - ".:/app"
                 networks:
                         - webservice
         db:
