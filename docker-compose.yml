@@ -5,8 +5,8 @@ services:
                         context: .
                         dockerfile: Dockerfile
                 image: webapp
-                command: ["sh"]
-#                container_name: python-api
+#                command: ["sh"]
+                container_name: python-api
                 environment:
                         - TZ=Asia/Bangkok
                         - DB_NAME=WebApp
