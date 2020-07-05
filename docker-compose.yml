@@ -4,6 +4,7 @@ services:
                 build:
                         context: .
                         dockerfile: Dockerfile
+                image: webapp
                 container_name: python-api
                 environment:
                         - TZ=Asia/Bangkok
